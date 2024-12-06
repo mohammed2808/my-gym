@@ -1,0 +1,198 @@
+/* Slider Container */
+.slider-container {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Full screen height */
+    overflow: hidden;
+
+  }
+  
+  /* Slide */
+  .slide {
+    width: 100%;
+    height: 100%;
+   
+    filter: brightness(40%);
+    background-size: cover;
+    background-position: center;
+    transition: background-image 0.5s ease-in-out;
+  }
+  
+  /* Navigation Buttons */
+
+  .proback {
+    position: relative;
+    width: 100%;
+    height: 80vh; /* Height of the container */
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+   /* Equivalent to px-64 in Tailwind */
+    overflow: hidden; /* Ensures content stays inside */
+  }
+  
+  .proback::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; 
+
+   
+     /* Ensure the background covers the entire container */
+    height: 100%; /* Cover the entire container height */
+    background-image: url('src/review.jpg');
+    background-position: center;
+    background-size: cover; /* Ensure the image fills the container without stretching */
+    filter: brightness(40%); /* Apply filter only to the background */
+    z-index: -1; /* Make sure the background stays behind the content */
+  }
+  
+  
+
+
+  .coach {
+    position: relative;
+    /* Ensure the element has relative positioning for the pseudo-element to be positioned correctly */
+  }
+  
+  .coach::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('src/coachback.jpg');
+    background-size: cover;
+    filter: blur(2px);
+    
+     /* Apply the blur effect */
+    z-index: -1; /* Ensure the pseudo-element stays behind the main content */
+  }
+  
+  .proback .review {
+    position: relative;
+    z-index: 2; /* Layer above the background */
+    color: white; /* Optional: Style text for readability */
+  }
+ .reserve{
+  min-height: 100vh;
+ }
+.butt{
+  margin-top: 5%;
+}
+.chefe{
+  height: 100vh;
+  
+}
+
+.descript{
+  margin-right: 10%;
+  margin-top: 2%;
+ 
+}
+/* Define the fade-in and fade-out animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+/* Apply fade-in animation when element is visible */
+.fade-in {
+  animation: fadeIn 1s ease-out forwards;
+}
+
+/* Apply fade-out animation when element is out of view */
+.fade-out {
+  animation: fadeOut 1s ease-out forwards;
+}
+
+.opacity-0 {
+  opacity: 0;
+}
+.foot{
+ 
+  background-color:  black;
+  padding-top: 3%;
+  padding-bottom: 3%;
+  
+  align-items: center;
+}
+body{
+  overflow-x: hidden;
+}
+
+.backmenue {
+  background-image: url('src/backmenue2.jpg');
+  background-size: cover; /* Ensures the image covers the entire area */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  background-position: center; /* Centers the image */
+  color: white;
+  position: relative;
+
+  padding-top: 8%;
+  padding-bottom: 8%;/* Allows the use of the ::before pseudo-element */
+}
+
+.backmenue::before {
+  content: ''; /* Ensures the pseudo-element is displayed */
+  position: absolute; /* Positions the overlay relative to .backmenue */
+  top: 0;
+  left: 0;
+  width: 100%; /* Ensures the overlay covers the full width */
+  height: 100%; /* Ensures the overlay covers the full height */
+  background: black; /* Sets the overlay color */
+  opacity: 0.8; 
+  
+  /* Adjusts transparency */
+  z-index: 1; /* Places the overlay below content */
+}
+
+.backmenue * {
+  position: relative; /* Ensures content stays above the overlay */
+  z-index: 2;
+}
+.backmenue ul li:hover{
+  color: red;
+  cursor: pointer;
+
+}
+
+.best img:hover{
+  cursor: pointer;
+  transform: scale(1.1);
+
+}
+.bb {
+  background-image: url('src/bestmenue.jpg'); /* Ensure the path to the image is correct */
+  background-size: cover;
+  background-position: center;
+  position: relative; /* Required for ::before to work */
+  z-index: 1; /* To ensure child elements are above the pseudo-element */
+}
+
+.bb::before {
+  content: ''; /* Necessary for pseudo-elements */
+  position: absolute; /* Makes it cover the parent element */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black; /* Dark overlay */
+  opacity: 0.6; /* Controls the darkness */
+  z-index: -1; /* Places the pseudo-element below the content */
+}
